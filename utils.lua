@@ -1,10 +1,12 @@
 local utils = {}
 
-function utils.enableUTF8 () -- Habilita UFT8 no terminal
+---Habilita o padrão UTF-8 no terminal
+function utils.enableUTF8 ()
     os.execute("chcp 65001")
 end
 
-function utils.printHeader() -- Gera o cabeçalho da aplicação
+---Gera o cabeçalho da aplicação no terminal
+function utils.printHeader()
     print([[
 =========================================================
                     /
@@ -18,7 +20,10 @@ function utils.printHeader() -- Gera o cabeçalho da aplicação
 ]])
 end
 
-function utils.getProgressBar(attributeValue) -- Gera uma barra de progresso
+---Gera uma barra de progresso
+---@param attributeValue number
+---@return string progressbar: exibida como barra de progresso no terminal
+function utils.getProgressBar(attributeValue)
     local progressBar = ""
     local progressCount = 0
     local squareProgress = "⬜"
@@ -35,6 +40,14 @@ function utils.getProgressBar(attributeValue) -- Gera uma barra de progresso
     end
 
     return progressBar
+end
+
+---Pede ao usuário que defina uma opção de ação
+---@return any
+function utils.ask()
+    io.write("> ")
+    local answer = io.read("*n")
+    return answer
 end
 
 return utils

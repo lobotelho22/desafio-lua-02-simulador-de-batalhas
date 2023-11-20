@@ -13,7 +13,7 @@ local monsterBio = monster.description
 
 local attackAttribute = monster.attack
 local defenseAttribute = monster.defense
-local lifeAttribute = math.floor(((monster.health / monster.maxHealth) * 10) + 0.5)
+local lifeAttribute = math.floor(((monster.health / monster.maxHealth) * 10))
 local speedAttribute = monster.speed
 
 -- Card
