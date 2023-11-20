@@ -1,7 +1,7 @@
 -- Dependencies
 
-local player = require("definitions.player")
-local colossus = require("definitions.colossus")
+local player = require("player.player")
+local colossus = require("monsters.colossus")
 local utils = require("utils")
 local monster = require('functions.monster')
 
