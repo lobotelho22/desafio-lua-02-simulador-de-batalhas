@@ -2,22 +2,14 @@
 
 local player = require("definitions.player")
 local colossus = require("definitions.colossus")
+local utils = require("utils")
+local monster = require('functions.monster')
 
-os.execute("chcp 65001")
+-- utils.enableUTF8() -- Caso os emojis não estejam aparecendo em sua tela, habilite essa opção
 
 -- HEADER
 
-print([[
-=====================================================
-                    /
-            *//////{<>==================-
-                    \
-------------------------------------------------------                
-                SIMULADOR DE BATALHA
-------------------------------------------------------
-*****    Pegue sua espada e encare o desafio    *****
-=====================================================
-]])
+utils.printHeader()
 
 -- Obter Definições do Jogador
 
@@ -29,6 +21,6 @@ local boss = colossus
 
 -- Apresentar o Monstro
 
-print (colossus.description)
+monster.getCard(boss)
 
 -- Apresentar o monstro
