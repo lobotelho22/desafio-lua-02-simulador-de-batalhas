@@ -13,7 +13,7 @@ utils.printHeader()
 
 -- Obter Definições do Jogador
 
-
+local warrior = player
 
 -- Obter definições do monstro
 
@@ -23,4 +23,23 @@ local boss = colossus
 
 monster.getCard(boss)
 
--- Apresentar o monstro
+-- Engine
+
+while true do
+
+    for i = 1, 10, 1 do
+        player.health = player.health - 2
+        print("porrada")
+    end
+
+    -- Turno Jogador
+
+    -- Turno criatura
+
+    if boss.health <= 0 then
+        break
+    end
+    if warrior.health <= 0 then
+        break
+    end
+end
