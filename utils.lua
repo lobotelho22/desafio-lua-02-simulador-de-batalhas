@@ -1,3 +1,5 @@
+local globalConsts = require("globalConsts")
+
 local utils = {}
 
 ---Habilita o padrão UTF-8 no terminal
@@ -48,6 +50,21 @@ function utils.ask()
     io.write("> ")
     local answer = io.read("*n")
     return answer
+end
+
+---Executa a limpeza do terminal, de acordo com o Sistema Operacional do usuário
+---@param osName string
+function utils.clearScreen(osName)
+    if osName == globalConsts.OPERATING_SYSTEMS[1] then
+        os.execute("cls")
+    else
+        os.execute("clear")
+    end
+end
+
+function utils.pressEnterToContinue(message)
+    io.write(message)
+    os.execute("read R")
 end
 
 return utils
